@@ -1,6 +1,6 @@
 #pragma once
 #include<string>
-//#include "Plateau.h"
+#include "Plateau.h"
 using namespace std;
 
 class Joueur
@@ -11,7 +11,7 @@ class Joueur
 	int points_;
 
 public:
-	Joueur();
+	Joueur(int num, bool t);
 	~Joueur();
 
 	int getPoints() const { return points_; };
@@ -19,7 +19,13 @@ public:
 	bool getTour() const { return tour_; };
 	int getNum() const { return num_; };
 
-	//Plateau action(Plateau);
+	Plateau action(Plateau);
+	//Menu pause();
+	//Menu finPartie(Plateau)
+	//affiche action
+	//Menu capituler()
+
+	
 
 
 };
