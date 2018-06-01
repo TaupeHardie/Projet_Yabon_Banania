@@ -16,10 +16,10 @@ public:
 
 	int getTour() const { return tour_; };
 	bool getBlocage() const { return blocage_; };
-	int changeTour() { tour_++; }; //Incrémente le tour
+	void changeTour() { tour_++; }; //Incrémente le tour
 	int* turfu(int) const; //Calcule le futur tableau si la case en argument était choisie
 	int* difference(Plateau P) const; //Note les différences entre deux plateaux
-	bool blocage();
+	void blocage(); // verifie si le plateau est bloqué
 
 };
 
