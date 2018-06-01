@@ -75,8 +75,17 @@ void Plateau::blocage()
 	if (tour_ % 2 == 1)
 	{
 		int i = 0;
-		while ((plateau_[i] != 0)||(i==5)) { i++; } // parcours du début de la première moitiétableau
+		while ((plateau_[i] == 0)||(i!=5)) { i++; } // parcours du début de la première moitiétableau
 		if ((i == 5) && (plateau_[5] == 0))	//verifie si on a parcouru jusqu'au bout et si le dernier élément est zéro
+		{
+			blocage_ = true;
+		}
+	}
+	if (tour_ % 2 == 0)
+	{
+		int i = 0;
+		while ((plateau_[i] == 0) || (i != 5)) { i++; }
+		if ((i == 5) && (plateau_[5] == 0))
 		{
 			blocage_ = true;
 		}
