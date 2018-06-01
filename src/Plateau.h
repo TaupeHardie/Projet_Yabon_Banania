@@ -15,10 +15,10 @@ public:
 	Plateau copieplateau(const Plateau & t);
 
 	int getTour() const { return tour_; };
-	bool getBlocage() const { return blocage };
+	bool getBlocage() const { return blocage_; };
 	int changeTour() { tour_++; }; //Incrémente le tour
 	int* turfu(int) const; //Calcule le futur tableau si la case en argument était choisie
-	Plateau difference(Plateau) const; //Note les différences entre deux plateaux
+	int* difference(Plateau P) const; //Note les différences entre deux plateaux
 	bool blocage();
 
 };
