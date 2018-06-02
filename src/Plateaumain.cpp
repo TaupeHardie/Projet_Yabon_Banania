@@ -3,7 +3,7 @@
 using namespace std;
 using namespace cimg_library;
 
-int main() {
+int main(){
 	unsigned char
 		grid_color[3] = { 0,0,255 },
 		play1_color[3] = { 204,0,0 },
@@ -54,7 +54,7 @@ int main() {
 
 				}
 				// Player 2, draw circle green
-				if (player == 2 & table[i][j] == 2) {
+				if (player == 2 && table[i][j] == 2) {
 					scene.draw_circle(50 + j * 100, 50 + i * 100, 40, play2_color, 2, ~0U);
 					player = 3 - player; // joueur
 				}
