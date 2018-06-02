@@ -1,6 +1,10 @@
 #pragma once
 #include<string>
 #include "Plateau.h"
+#include "Menu.h"
+#include "Menu_pause.h"
+#include "Menu_fin.h"
+#include "Menu_principal.h"
 using namespace std;
 
 class Joueur
@@ -20,10 +24,10 @@ public:
 	int getNum() const { return num_; };
 
 	Plateau action(Plateau);
-	//Menu pause();
-	//Menu finPartie(Plateau)
+	Menu_pause pause();
+	Menu finPartie(Plateau);
 	//affiche action
-	//Menu capituler()
+	Menu capituler();
 
 	
 
