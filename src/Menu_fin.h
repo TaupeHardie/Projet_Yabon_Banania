@@ -9,6 +9,8 @@ public:
 
 	void nouvelle();
 	void quitter();
+	void affiche();
+
 
 };
 

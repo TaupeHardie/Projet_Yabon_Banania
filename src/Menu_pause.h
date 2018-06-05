@@ -9,7 +9,9 @@ public:
 
 	void continuer();
 	void capituler();
-	void sauver();
+	void sauver(Plateau P, ofstream &ofs);
+	void affiche();
+
 
 };
 

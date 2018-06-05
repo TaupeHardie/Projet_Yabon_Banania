@@ -4,12 +4,12 @@ using namespace std;
 
 
 
-Joueur::Joueur(int num, bool t)
+Joueur::Joueur(int num)
 {
 	num_ = num;
+	cout << "Entrez le nom du joueur" << endl;
 	cin >> nom_;
 	points_ = 0;
-	tour_ = t;
 
 
 }

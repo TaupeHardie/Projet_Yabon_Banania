@@ -2,6 +2,7 @@
 #include "Plateau.h"
 
 
+
 Plateau::Plateau()
 {
 
@@ -11,7 +12,6 @@ Plateau::Plateau()
 		plateau_[i] = 4;
 	}
 	plateauAvant_ = new int[12];
-	plateauxFuturs_ = new int*[0];
 	tour_ = 1;
 	blocage_ = false;
 	
@@ -26,7 +26,6 @@ Plateau::~Plateau()
 Plateau Plateau::copieplateau(const Plateau & t) {
 	Plateau copie;
 	copie.plateauAvant_ = t.plateauAvant_;
-	copie.plateauxFuturs_ = t.plateauxFuturs_;
 	copie.plateau_ = new int[12];
 	for (int i = 0; i < 12; i++)
 		copie.plateau_[i] = t.plateau_[i];
@@ -35,14 +34,14 @@ Plateau Plateau::copieplateau(const Plateau & t) {
 }
 ;
 
-int* Plateau  :: turfu(int a) const 
+int* Plateau  :: turfu(int a, Joueur J) const 
 {
 	int cpt = a; //compteur
 	int* t; // copie du plateau 
 	int nbgraines = plateau_[a];
 	t = new int[12]; 
 	for (int i = 0; i < 12; i++) {
-		plateau_[i] = t[i];
+		t[i]= plateau_[i];
 	}
 	t[a] = 0; 
 
@@ -53,6 +52,24 @@ int* Plateau  :: turfu(int a) const
 		t[cpt++] ++;
 		nbgraines--;
 		}
+
+	if (cpt = 0)
+	{
+		cpt = 11;
+	}
+
+	if (J.getNum == 1)
+	{
+		while (cpt <= 11 && cpt>=6) 
+		{
+			if (t[cpt] == 2 || t[cpt] == 3)
+			{
+				J.setPoints(J.getPoints+t[cpt]);
+				t[cpt] = 0;
+				cpt--;
+			}
+		}
+	}
 	return t;
 
 }

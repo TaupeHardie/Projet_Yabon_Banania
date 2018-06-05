@@ -11,23 +11,22 @@ class Joueur
 {
 	string nom_;
 	int num_;
-	bool tour_;
 	int points_;
 
 public:
-	Joueur(int num, bool t);
+	Joueur(int num);
 	~Joueur();
 
 	int getPoints() const { return points_; };
 	string getNom() const { return nom_; };
-	bool getTour() const { return tour_; };
 	int getNum() const { return num_; };
+	void setPoints(int p) { points_ = p; };
 
-	Plateau action(Plateau);
-	Menu_pause pause();
-	Menu finPartie(Plateau);
+	//Plateau action(Plateau);
+	//Menu_pause pause();
+	//Menu finPartie(Plateau);
 	//affiche action
-	Menu capituler();
+	//Menu capituler();
 
 	
 

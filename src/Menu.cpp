@@ -1,8 +1,8 @@
 #include "Menu.h"
 
-Menu::Menu(string txt)
+Menu::Menu()
 {
-	texte_ = txt;
+
 }
 
 Menu::~Menu()
