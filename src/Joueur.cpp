@@ -4,9 +4,9 @@ using namespace std;
 
 
 
-Joueur::Joueur(int num)
+Joueur::Joueur(bool tour)
 {
-	num_ = num;
+	tour_ = tour;
 	cout << "Entrez le nom du joueur" << endl;
 	cin >> nom_;
 	points_ = 0;

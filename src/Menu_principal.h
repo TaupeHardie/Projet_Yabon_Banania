@@ -1,8 +1,11 @@
 #pragma once
-#include "c:\Users\hugon\source\repos\Projet_Yabon_Banania\src\Menu.h"
+
 #include "Plateau.h"
-class Menu_principal :
-	public Menu
+#include "CImg.h"
+#include <iostream>
+
+class Menu_principal 
+
 {
 
 public:

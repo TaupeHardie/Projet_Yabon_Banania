@@ -1,15 +1,16 @@
 #pragma once
-#include "c:\Users\hugon\source\repos\Projet_Yabon_Banania\src\Menu.h"
-class Menu_pause :
-	public Menu
+#include "Plateau.h"
+class Menu_pause 
+	
 {
+
 public:
 	Menu_pause();
 	~Menu_pause();
 
 	void continuer();
 	void capituler();
-	void sauver(Plateau P, ofstream &ofs);
+	void sauver(ofstream &ofs);
 	void affiche();
 
 

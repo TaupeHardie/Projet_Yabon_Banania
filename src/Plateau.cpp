@@ -1,11 +1,10 @@
 #include "stdafx.h"
 #include "Plateau.h"
+using namespace std;
 
 
-
-Plateau::Plateau()
+Plateau::Plateau(Joueur *J1, Joueur *J2 )
 {
-
 	plateau_ = new int[12];
 	for (int i = 0; i < 12; i++)
 	{
@@ -14,6 +13,8 @@ Plateau::Plateau()
 	plateauAvant_ = new int[12];
 	tour_ = 1;
 	blocage_ = false;
+	*J1_ = J1;
+	*J2_ = J1;
 	
 }
 
@@ -23,18 +24,19 @@ Plateau::~Plateau()
 
 }
 
-Plateau Plateau::copieplateau(const Plateau & t) {
-	Plateau copie;
-	copie.plateauAvant_ = t.plateauAvant_;
-	copie.plateau_ = new int[12];
-	for (int i = 0; i < 12; i++)
-		copie.plateau_[i] = t.plateau_[i];
-	return copie;
-
-}
-;
-
-int* Plateau  :: turfu(int a, Joueur J) const 
+//Plateau Plateau::copieplateau(const Plateau & t) {
+//	Plateau copie;
+//	copie.plateauAvant_ = t.plateauAvant_;
+//	copie.plateau_ = new int[12];
+//	for (int i = 0; i < 12; i++)
+//		copie.plateau_[i] = t.plateau_[i];
+//	return copie;
+//
+////
+////}
+//;
+//
+int* Plateau  :: turfu(int a)
 {
 	int cpt = a; //compteur
 	int* t; // copie du plateau 
@@ -58,18 +60,32 @@ int* Plateau  :: turfu(int a, Joueur J) const
 		cpt = 11;
 	}
 
-	if (J.getNum == 1)
+	if ( J1_->getTour() == true)
 	{
 		while (cpt <= 11 && cpt>=6) 
 		{
 			if (t[cpt] == 2 || t[cpt] == 3)
 			{
-				J.setPoints(J.getPoints+t[cpt]);
+				J1_->setPoints(J1_->getPoints() + t[cpt]);
 				t[cpt] = 0;
 				cpt--;
 			}
 		}
 	}
+	if (J2_->getTour() == true)
+	{
+		while (cpt <= 5 && cpt >= 0)
+		{
+			if (t[cpt] == 2 || t[cpt] == 3)
+			{
+				J2_->setPoints(J2_->getPoints() + t[cpt]);
+				t[cpt] = 0;
+				cpt--;
+			}
+		}
+	}
+
+
 	return t;
 
 }
@@ -89,7 +105,7 @@ int*  Plateau::difference(Plateau P) const
 
 void Plateau::blocage()
 {
-	if (tour_ % 2 == 1)
+	if (J1_->getTour() == true)
 	{
 		int i = 0;
 		while ((plateau_[i] == 0)||(i!=5)) { i++; } // parcours du début de la première moitiétableau
@@ -98,7 +114,7 @@ void Plateau::blocage()
 			blocage_ = true;
 		}
 	}
-	if (tour_ % 2 == 0)
+	if (J2_->getTour() == true)
 	{
 		int i = 0;
 		while ((plateau_[i] == 0) || (i != 5)) { i++; }
