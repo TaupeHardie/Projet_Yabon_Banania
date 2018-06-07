@@ -1,11 +1,15 @@
-#pragma once
+#ifndef MENU_PAUSE_H
+#define MENU_PAUSE_H
+
+
 #include "Plateau.h"
 class Menu_pause 
 	
 {
+	Plateau *jeu_;
 
 public:
-	Menu_pause();
+	Menu_pause(Plateau *P);
 	~Menu_pause();
 
 	void continuer();
@@ -16,3 +20,4 @@ public:
 
 };
 
+#endif // !MENU_PAUSE_H
